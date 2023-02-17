@@ -159,7 +159,7 @@ const grid = document.querySelector('.grid')
 
   //game over
   function gameOver(square) {
-    result.innerHTML = 'BOOM! Game Over!'
+    result.innerHTML = 'YOU WOKE THEM UP!'
     isGameOver = true
 
     //show ALL the bombs
@@ -182,7 +182,7 @@ const grid = document.querySelector('.grid')
         matches ++
       }
       if (matches === bombAmount) {
-        result.innerHTML = 'YOU WIN!'
+        result.innerHTML = 'Nice Job Feeding Them'
         isGameOver = true
       }
     }
