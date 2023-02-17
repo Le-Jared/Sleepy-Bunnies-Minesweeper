@@ -1,29 +1,28 @@
 const grid = document.querySelector('.grid')
-  const carrotsLeft = document.querySelector('#carrots-left')
+  const flagsLeft = document.querySelector('#flags-left')
   const result = document.querySelector('#result')
   let width = 10
-  let bunnyAmount = 20
-  let carrots = 0
+  let bombAmount = 20
+  let flags = 0
   let squares = []
   let isGameOver = false
 
   //create Board
   function createBoard() {
-    carrotsLeft.innerHTML = bunnyAmount
+    flagsLeft.innerHTML = bombAmount
 
-    //get shuffled game array with random bunny
-    const bunnyArray = Array(bunnyAmount).fill('bunny')
-    const emptyArray = Array(width*width - bunnyAmount).fill('valid')
-    const gameArray = emptyArray.concat(bunnyArray)
+    //get shuffled game array with random bombs
+    const bombsArray = Array(bombAmount).fill('bomb')
+    const emptyArray = Array(width*width - bombAmount).fill('valid')
+    const gameArray = emptyArray.concat(bombsArray)
     const shuffledArray = gameArray.sort(() => Math.random() -0.5)
 
-    //Create a 100 Square
     for(let i = 0; i < width*width; i++) {
       const square = document.createElement('div')
-      square.setAttribute('id', i) //Give unique id
-      square.classList.add(shuffledArray[i]) 
-      grid.appendChild(square) //Put 
-      squares.push(square) //Push squares into it
+      square.setAttribute('id', i)
+      square.classList.add(shuffledArray[i])
+      grid.appendChild(square)
+      squares.push(square)
 
       //normal click
       square.addEventListener('click', function(e) {
@@ -33,7 +32,7 @@ const grid = document.querySelector('.grid')
       //cntrl and left click
       square.oncontextmenu = function(e) {
         e.preventDefault()
-        addCarrot(square)
+        addFlag(square)
       }
     }
 
@@ -44,35 +43,35 @@ const grid = document.querySelector('.grid')
       const isRightEdge = (i % width === width -1)
 
       if (squares[i].classList.contains('valid')) {
-        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bunny')) total ++
-        if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bunny')) total ++
-        if (i > 10 && squares[i -width].classList.contains('bunny')) total ++
-        if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bunny')) total ++
-        if (i < 98 && !isRightEdge && squares[i +1].classList.contains('bunny')) total ++
-        if (i < 90 && !isLeftEdge && squares[i -1 +width].classList.contains('bunny')) total ++
-        if (i < 88 && !isRightEdge && squares[i +1 +width].classList.contains('bunny')) total ++
-        if (i < 89 && squares[i +width].classList.contains('bunny')) total ++
+        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++
+        if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++
+        if (i > 10 && squares[i -width].classList.contains('bomb')) total ++
+        if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++
+        if (i < 98 && !isRightEdge && squares[i +1].classList.contains('bomb')) total ++
+        if (i < 90 && !isLeftEdge && squares[i -1 +width].classList.contains('bomb')) total ++
+        if (i < 88 && !isRightEdge && squares[i +1 +width].classList.contains('bomb')) total ++
+        if (i < 89 && squares[i +width].classList.contains('bomb')) total ++
         squares[i].setAttribute('data', total)
       }
     }
   }
   createBoard()
 
-  //add Carrot with right click
-  function addCarrot(square) {
+  //add Flag with right click
+  function addFlag(square) {
     if (isGameOver) return
-    if (!square.classList.contains('checked') && (carrots < bunnyAmount)) {
-      if (!square.classList.contains('carrot')) {
-        square.classList.add('carrot')
+    if (!square.classList.contains('checked') && (flags < bombAmount)) {
+      if (!square.classList.contains('flag')) {
+        square.classList.add('flag')
         square.innerHTML = '🥕'
-        carrots ++
-        carrotsLeft.innerHTML = bunnyAmount- carrots
+        flags ++
+        flagsLeft.innerHTML = bombAmount- flags
         checkForWin()
       } else {
-        square.classList.remove('carrot')
+        square.classList.remove('flag')
         square.innerHTML = ''
-        carrots --
-        carrotsLeft.innerHTML = bunnyAmount- carrots
+        flags --
+        flagsLeft.innerHTML = bombAmount- flags
       }
     }
   }
@@ -81,8 +80,8 @@ const grid = document.querySelector('.grid')
   function click(square) {
     let currentId = square.id
     if (isGameOver) return
-    if (square.classList.contains('checked') || square.classList.contains('carrot')) return
-    if (square.classList.contains('bunny')) {
+    if (square.classList.contains('checked') || square.classList.contains('flag')) return
+    if (square.classList.contains('bomb')) {
       gameOver(square)
     } else {
       let total = square.getAttribute('data')
@@ -160,14 +159,14 @@ const grid = document.querySelector('.grid')
 
   //game over
   function gameOver(square) {
-    result.innerHTML = 'YOU WOKE THEM UP'
+    result.innerHTML = 'BOOM! Game Over!'
     isGameOver = true
 
-    //show ALL the bunnies
+    //show ALL the bombs
     squares.forEach(square => {
-      if (square.classList.contains('bunny')) {
+      if (square.classList.contains('bomb')) {
         square.innerHTML = '🐰'
-        square.classList.remove('bunny')
+        square.classList.remove('bomb')
         square.classList.add('checked')
       }
     })
@@ -179,12 +178,16 @@ const grid = document.querySelector('.grid')
   let matches = 0
 
     for (let i = 0; i < squares.length; i++) {
-      if (squares[i].classList.contains('carrot') && squares[i].classList.contains('bunny')) {
+      if (squares[i].classList.contains('flag') && squares[i].classList.contains('bomb')) {
         matches ++
       }
-      if (matches === bunnyAmount) {
-        result.innerHTML = 'Good Job Feeding Them'
+      if (matches === bombAmount) {
+        result.innerHTML = 'YOU WIN!'
         isGameOver = true
       }
     }
   }
+
+  function reload(){
+    window.location.reload();
+}

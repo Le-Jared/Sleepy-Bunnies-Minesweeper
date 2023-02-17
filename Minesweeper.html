@@ -2,17 +2,18 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Bunnysweeper</title>
+  <title>🐇</title>
   <link rel="stylesheet" href="Minesweeper.css"></link>
   <script defer src="Minesweeper.js" charset="utf-8"></script>
 </head>
-    <body>
-
+<body>
+    <div id="box">
+        <h2>Bunny Feeder 🐰</h2><hr><br><br>
         <div class="container">
             <div class="grid"></div>
-            <div>Carrots left: <span id='carrots-left'></span></div>
+            <div>Carrots left: <span id='flags-left'></span></div>
             <div id="result"></div>
         </div>
-  
-    </body>
+        <button id="new-game-button" type="button" onclick="reload()">Feed Again?</button>
+</body>
 </html>
