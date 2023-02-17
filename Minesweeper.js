@@ -1,3 +1,7 @@
+const targetDiv = document.getElementById("welcome-box");
+const hideDiv = document.getElementById("game-box");
+hideDiv.style.display = "none";
+const btn = document.getElementById("start");
 const grid = document.querySelector('.grid')
   const flagsLeft = document.querySelector('#flags-left')
   const result = document.querySelector('#result')
@@ -7,6 +11,8 @@ const grid = document.querySelector('.grid')
   let squares = []
   let isGameOver = false
 
+
+  function gameStart () {}
   //create Board
   function createBoard() {
     flagsLeft.innerHTML = bombAmount
@@ -190,5 +196,13 @@ const grid = document.querySelector('.grid')
 
   // Reset Game
   function reload(){
-    window.location.reload();
-}
+    grid.innerHTML = "";
+    // window.location.reload(); Code to reload window
+  }
+
+targetDiv.onclick = function () {
+      targetDiv.style.display = "none";
+      hideDiv.style.display = "block";
+    }
+
+

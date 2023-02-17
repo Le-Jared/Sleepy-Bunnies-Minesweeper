@@ -7,26 +7,26 @@
   <script defer src="Minesweeper.js" charset="utf-8"></script>
 </head>
 <body>
+    <div id="main-header">Sleepy Bunnies</div>
     <div class="main-box" id="welcome-box">
         <h4>Instructions</h4>
-        <p> Use the left click button on the mouse to select a space on the grid. If you hit a Bunny, you lose. </p>
-        <p> You can right click a square with the mouse to place a carrot where you think a Bunny is. This allows you to avoid that spot. </p>
-        <p>The numbers on the board represent how many bombs are adjacent to a square. For example, if a square has a "3" on it, then there are 3 rabbits next to that square. The rabbits could be above, below, right left, or diagonal to the square.</p>  
-        Avoid all the bunnies and expose all the empty spaces to win Bunny Feeder.</p>
+        <p> Use the left click button on the mouse to select a space on the grid. If you hit a bunny, you wake it up and lose. </p>
+        <p> You can right click a square with the mouse to place a carrot where you think a bunny is. This allows you to avoid that spot. </p>
+        <p>The numbers on the board represent how many bunnies are adjacent to a square. For example, if a square has a "3" on it, then there are 3 bunnies next to that square. The bunnies could be above, below, right left, or diagonal to the square.</p>  
+        Avoid all the bunnies and expose all the empty spaces to win Sleepy Bunnies.</p>
             
-        <p>Tip: Use the numbers to determine where you know a bomb is.</p>   
+        <p>Tip: Use the numbers to determine where you know a bunny is.</p>   
             
-        <button id="start" type="submit">START</button>
+        <button id="start" type="button">START</button>
         <br><br>
     </div>
-    <div class="main-box" id="Game-box">
-        <header>Bunny Feeder 🐰</header>
+    <div class="main-box" id="game-box">
         <div class="container">
             <div class="grid"></div>
             <div>Carrots left: <span id='flags-left'></span></div>
             <div id="result"></div>
         </div>
-        <button id="new-game-button" type="button" onclick="reload()">Feed Again?</button>
+        <button id="new-game-button" type="button" onclick="reload()">Try Again?</button>
     </div>
 </body>
 </html>
