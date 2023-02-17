@@ -188,6 +188,7 @@ const grid = document.querySelector('.grid')
     }
   }
 
+  // Reset Game
   function reload(){
     window.location.reload();
 }
