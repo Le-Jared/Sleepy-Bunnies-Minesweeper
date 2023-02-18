@@ -12,7 +12,6 @@ const grid = document.querySelector('.grid')
   let isGameOver = false
 
 
-  function gameStart () {}
   //create Board
   function createBoard() {
     flagsLeft.innerHTML = bombAmount
@@ -35,7 +34,7 @@ const grid = document.querySelector('.grid')
         click(square)
       })
 
-      //cntrl and left click
+      //cntrl and left click or right click
       square.oncontextmenu = function(e) {
         e.preventDefault()
         addFlag(square)
@@ -194,15 +193,16 @@ const grid = document.querySelector('.grid')
     }
   }
 
-  // Reset Game
-  function reload(){
-    grid.innerHTML = "";
-    // window.location.reload(); Code to reload window
-  }
+
+
 
 targetDiv.onclick = function () {
       targetDiv.style.display = "none";
       hideDiv.style.display = "block";
     }
+
+function refresh (){
+    window.location.reload();
+}
 
 
