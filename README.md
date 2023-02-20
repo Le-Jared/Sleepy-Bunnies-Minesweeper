@@ -14,12 +14,33 @@ This is my take on the Minesweeper game, i call it Sleepy Bunnies. The gameplay 
 - The number on the bottom indicates how many bunnies are on the board.
 - The user can restart again by clicking the Try Again? button
 
+![Screenshot 2023-02-20 at 1 03 38 PM](https://user-images.githubusercontent.com/68887503/220013672-b3436f2a-d191-4407-8aa7-8f3d668420a1.png)
 
-# Technologies used in this project were:
+# Technologies used in this project were
 
 HTML & CSS
 FlexBox
 JavaScript
 
+In addition to this, i have used inbuilt methods such as:
 
-![Screenshot 2023-02-20 at 1 01 11 PM](https://user-images.githubusercontent.com/68887503/220013357-37538bcf-113c-487c-835f-5e87cb77c4cb.png)
+addEventListener()
+setAttribute()
+fill()
+setInterval()
+some()
+every()
+forEach()
+includes()
+contains()
+add()
+remove()
+createElement()
+appendChild()
+push()
+Array()
+continue
+And many more.
+
+# Code Snipets
+
