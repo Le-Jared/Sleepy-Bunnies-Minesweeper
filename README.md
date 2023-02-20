@@ -24,22 +24,23 @@ JavaScript
 
 In addition to this, i have used inbuilt methods such as:
 
-addEventListener()
-setAttribute()
-fill()
-setInterval()
-some()
-every()
-forEach()
-includes()
-contains()
-add()
-remove()
-createElement()
-appendChild()
-push()
-Array()
-continue
+- addEventListener()
+- setAttribute()
+- fill()
+- setInterval()
+- some()
+- every()
+- forEach()
+- includes()
+- contains()
+- add()
+- remove()
+- createElement()
+- appendChild()
+- push()
+- Array()
+- continue
+
 And many more.
 
 # Code Snipets
