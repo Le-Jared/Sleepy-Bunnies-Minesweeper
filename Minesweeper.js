@@ -42,7 +42,7 @@ const grid = document.querySelector('.grid')
       }
     }
 
-    //add numbers to the squares
+    //add numbers to the squares setting 8 if conditions to check for bombs nearby
     for (let i = 0; i < squares.length; i++) {
       let total = 0
       const isLeftEdge = (i % width === 0)
