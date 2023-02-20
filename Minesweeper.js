@@ -16,12 +16,13 @@ const grid = document.querySelector('.grid')
   function createBoard() {
     flagsLeft.innerHTML = bombAmount
 
-    //get shuffled game array with random bombs
+    //Combine bombsArray and emptyArray and randomize the bombs
     const bombsArray = Array(bombAmount).fill('bomb')
     const emptyArray = Array(width*width - bombAmount).fill('valid')
     const gameArray = emptyArray.concat(bombsArray)
     const shuffledArray = gameArray.sort(() => Math.random() -0.5)
 
+    //Create Squares
     for(let i = 0; i < width*width; i++) {
       const square = document.createElement('div')
       square.setAttribute('id', i)
@@ -41,7 +42,7 @@ const grid = document.querySelector('.grid')
       }
     }
 
-    //add numbers
+    //add numbers to the squares
     for (let i = 0; i < squares.length; i++) {
       let total = 0
       const isLeftEdge = (i % width === 0)
@@ -195,7 +196,6 @@ const grid = document.querySelector('.grid')
 
 
 
-
 targetDiv.onclick = function () {
       targetDiv.style.display = "none";
       hideDiv.style.display = "block";
@@ -203,6 +203,8 @@ targetDiv.onclick = function () {
 
 function refresh (){
     window.location.reload();
+    e.preventDefault();
+    
 }
 
 
