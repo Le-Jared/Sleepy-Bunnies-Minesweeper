@@ -62,7 +62,7 @@ const grid = document.querySelector('.grid')
   }
   createBoard()
 
-  //add Flag with right click
+  //add Carrot function
   function addFlag(square) {
     if (isGameOver) return
     if (!square.classList.contains('checked') && (flags < bombAmount)) {
