@@ -15,6 +15,8 @@ This is my take on the Minesweeper game, i call it Sleepy Bunnies. The gameplay 
 | See the number of bunnies are left       |  the number on the bottom indicates so
 | Click the Try Again? button              |  refresh the game
 
+<img width="315" alt="Screenshot 2023-02-20 at 1 47 59 PM" src="https://user-images.githubusercontent.com/68887503/220019702-044e28e7-f499-4ce6-b200-3cee00ab80dd.png">
+
 ![Screenshot 2023-02-20 at 1 03 38 PM](https://user-images.githubusercontent.com/68887503/220013672-b3436f2a-d191-4407-8aa7-8f3d668420a1.png)
 
 # Technologies used in this project were
