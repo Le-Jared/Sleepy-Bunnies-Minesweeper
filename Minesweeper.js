@@ -1,6 +1,6 @@
 const targetDiv = document.getElementById("welcome-box");
 const hideDiv = document.getElementById("game-box");
-hideDiv.style.display = "none";
+targetDiv.style.display = "none";
 const btn = document.getElementById("start");
 const grid = document.querySelector('.grid')
   const flagsLeft = document.querySelector('#flags-left')
@@ -42,22 +42,23 @@ const grid = document.querySelector('.grid')
       }
     }
 
-    //add numbers to the squares setting 8 if conditions to check for bombs nearby
+    //add numbers to the squares setting and checking all surrounding squares
     for (let i = 0; i < squares.length; i++) {
       let total = 0
       const isLeftEdge = (i % width === 0)
       const isRightEdge = (i % width === width -1)
 
       if (squares[i].classList.contains('valid')) {
-        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++
-        if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++
-        if (i > 10 && squares[i -width].classList.contains('bomb')) total ++
-        if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++
-        if (i < 98 && !isRightEdge && squares[i +1].classList.contains('bomb')) total ++
-        if (i < 90 && !isLeftEdge && squares[i -1 +width].classList.contains('bomb')) total ++
-        if (i < 88 && !isRightEdge && squares[i +1 +width].classList.contains('bomb')) total ++
-        if (i < 89 && squares[i +width].classList.contains('bomb')) total ++
+        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++ //check left
+        if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++ //check up diagonal right
+        if (i > 10 && squares[i -width].classList.contains('bomb')) total ++ //check up
+        if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++ //check up diagonal left
+        if (i < 98 && !isRightEdge && squares[i +1].classList.contains('bomb')) total ++ //check right
+        if (i < 90 && !isLeftEdge && squares[i -1 +width].classList.contains('bomb')) total ++ //check down diagonal left
+        if (i < 88 && !isRightEdge && squares[i +1 +width].classList.contains('bomb')) total ++ //check down diagonal right
+        if (i < 89 && squares[i +width].classList.contains('bomb')) total ++ //check down
         squares[i].setAttribute('data', total)
+      
       }
     }
   }
@@ -114,49 +115,41 @@ const grid = document.querySelector('.grid')
     setTimeout(() => {
       if (currentId > 0 && !isLeftEdge) {
         const newId = squares[parseInt(currentId) -1].id
-        //const newId = parseInt(currentId) - 1   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId > 9 && !isRightEdge) {
         const newId = squares[parseInt(currentId) +1 -width].id
-        //const newId = parseInt(currentId) +1 -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId > 10) {
         const newId = squares[parseInt(currentId -width)].id
-        //const newId = parseInt(currentId) -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId > 11 && !isLeftEdge) {
         const newId = squares[parseInt(currentId) -1 -width].id
-        //const newId = parseInt(currentId) -1 -width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId < 98 && !isRightEdge) {
         const newId = squares[parseInt(currentId) +1].id
-        //const newId = parseInt(currentId) +1   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId < 90 && !isLeftEdge) {
         const newId = squares[parseInt(currentId) -1 +width].id
-        //const newId = parseInt(currentId) -1 +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId < 88 && !isRightEdge) {
         const newId = squares[parseInt(currentId) +1 +width].id
-        //const newId = parseInt(currentId) +1 +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
       if (currentId < 89) {
         const newId = squares[parseInt(currentId) +width].id
-        //const newId = parseInt(currentId) +width   ....refactor
         const newSquare = document.getElementById(newId)
         click(newSquare)
       }
@@ -195,16 +188,23 @@ const grid = document.querySelector('.grid')
   }
 
 
-
+//Hide instructions
 targetDiv.onclick = function () {
       targetDiv.style.display = "none";
       hideDiv.style.display = "block";
     }
 
-function refresh (){
-    window.location.reload();
-    e.preventDefault();
-    
+function resetGame () {
+  window.location.reload();
 }
 
+
+// TESTING IN PROGRESS
+// const resetGame = () => {
+//     for(let i=0; i<squares.length; i++) {
+//         squares [i] = 0
+        
+//      }
+//     createBoard();
+//   }
 
