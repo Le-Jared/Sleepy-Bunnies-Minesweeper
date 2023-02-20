@@ -46,3 +46,5 @@ And many more.
 
 # Code Snipets
 
+# Future Work
+- Add a timer
