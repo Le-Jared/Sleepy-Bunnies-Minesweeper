@@ -168,7 +168,7 @@ const grid = document.querySelector('.grid')
     result.innerHTML = 'YOU WOKE THEM UP!'
     isGameOver = true
 
-    //show ALL the bombs
+    //show ALL the bunnies
     squares.forEach(square => {
       if (square.classList.contains('bomb')) {
         square.innerHTML = '🐰'
