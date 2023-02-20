@@ -11,5 +11,10 @@ This is my take on the Minesweeper game, i call it Bunny Feeder. The gameplay re
 Build up main page along with scoreboard
 
 
- Day 3:
+#Technologies & Code Snippets
+Technologies used in this project were:
+
+HTML & CSS
+FlexBox
+JavaScript
  
