@@ -196,21 +196,20 @@ function startGame () {
       hideDiv.style.display = "block";
     }
 
-
 function resetGame() {
-  // Remove all squares
-    while (grid.firstChild) {
-       grid.removeChild(grid.lastChild);
-    }
-    
-    // Reset game state
-    flags = 0;
-    isGameOver = false;
-    
-    // Recreate board
-    createBoard();
-    
-    // Reset result text
-    result.innerHTML = "";
-  }
+// Remove all squares from the grid
+for (let i = 0; i < squares.length; i++) {
+  grid.removeChild(squares[i])
+}
 
+// Reset variables to initial values
+flags = 0
+flagsLeft.innerHTML = bombAmount
+result.innerHTML = ""
+
+// Recreate the board and start the game
+squares = []
+isGameOver = false
+createBoard()
+}
+       
