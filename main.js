@@ -188,12 +188,7 @@ const grid = document.querySelector('.grid');
       }
     }
   }
-
-//Homepage
-function homePage(){
-  window.location.reload();
-}
-
+  
 //Hide instructions
 function startGame () {
       targetDiv.style.display = "none";
