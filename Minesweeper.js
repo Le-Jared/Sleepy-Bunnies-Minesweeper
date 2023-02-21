@@ -1,6 +1,6 @@
 const targetDiv = document.getElementById("welcome-box");
 const hideDiv = document.getElementById("game-box");
-targetDiv.style.display = "none";
+hideDiv.style.display = "none";
 const btn = document.getElementById("start");
 const grid = document.querySelector('.grid')
   const flagsLeft = document.querySelector('#flags-left')
@@ -194,9 +194,10 @@ targetDiv.onclick = function () {
       hideDiv.style.display = "block";
     }
 
-function resetGame () {
-  window.location.reload();
-}
+// function resetGame () {
+//   targetDiv.style.display = "none";
+//   window.location.reload();
+// }
 
 
 // TESTING IN PROGRESS
@@ -207,4 +208,13 @@ function resetGame () {
 //      }
 //     createBoard();
 //   }
+
+const newgameButton = document.getElementById("new-game-button");
+
+newgameButton.addEventListener("click", ()=>{
+   width.textContent = "";
+   squares.textContent = "";
+   isPlaying = false;
+   createBoard();
+})
 
