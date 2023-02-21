@@ -20,12 +20,12 @@ h2{
 }
 
 .container {
-  width: 500px;
+  min-width: 500px;
   align-content: center;
 }
 
 .grid {
-  height: 400px;
+  min-height: 400px;
   width: 400px;
   display: flex;
   flex-wrap: wrap;
@@ -42,7 +42,7 @@ div {
 
 }
 .valid {
-  height: 40px;
+  min-height: 40px;
   width: 40px;
   border: 5px solid;
   border-color: #009A17;
@@ -50,8 +50,8 @@ div {
 }
 
 .checked {
-  height: 40px;
-  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
   border: 2px solid;
   background-color: #b5651e;
   border-color: #009A17;
@@ -59,8 +59,8 @@ div {
 }
 
 .bomb {
-  height: 40px;
-  width: 40px;
+  min-height: 40px;
+  min-width: 40px;
   border: 5px solid;
   border-color: #009A17;
   box-sizing: border-box;
@@ -88,8 +88,8 @@ div {
 }
 
 button {
-    width: 100px;
-    height: 30px;
+    min-width: 100px;
+    min-height: 30px;
     background-color:rgb(195, 195, 195);
     color: black;
     font-weight: bolder;
