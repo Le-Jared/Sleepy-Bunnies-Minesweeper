@@ -88,8 +88,8 @@ div {
 }
 
 button {
-    min-width: 100px;
-    min-height: 30px;
+    width: 100px;
+    height: 30px;
     background-color:rgb(195, 195, 195);
     color: black;
     font-weight: bolder;
