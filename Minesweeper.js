@@ -2,6 +2,8 @@ const targetDiv = document.getElementById("welcome-box");
 const hideDiv = document.getElementById("game-box");
 hideDiv.style.display = "none";
 const btn = document.getElementById("start");
+const resetBtn = document.getElementById("reset");
+resetBtn.addEventListener("click", resetGame);
 const grid = document.querySelector('.grid')
   const flagsLeft = document.querySelector('#flags-left')
   const result = document.querySelector('#result')
@@ -47,9 +49,9 @@ const grid = document.querySelector('.grid')
       let total = 0
       const isLeftEdge = (i % width === 0)
       const isRightEdge = (i % width === width -1)
-
       if (squares[i].classList.contains('valid')) {
-        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++ //check left
+        const bombonLeft = i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')
+        if (bombonLeft) total ++ 
         if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++ //check up diagonal right
         if (i > 10 && squares[i -width].classList.contains('bomb')) total ++ //check up
         if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++ //check up diagonal left
@@ -194,27 +196,19 @@ targetDiv.onclick = function () {
       hideDiv.style.display = "block";
     }
 
-// function resetGame () {
-//   targetDiv.style.display = "none";
-//   window.location.reload();
-// }
 
+function resetGame() {
+// reset game variables
+  flags = 0;
+  isGameOver = false;
+  flagsLeft.innerHTML = bombAmount;
+  result.innerHTML = "";
+    
+// remove all squares from the grid
+  squares.forEach(square => square.remove());
+    
+// create a new board
+  createBoard();
+}
 
-// TESTING IN PROGRESS
-// const resetGame = () => {
-//     for(let i=0; i<squares.length; i++) {
-//         squares [i] = 0
-        
-//      }
-//     createBoard();
-//   }
-
-const newgameButton = document.getElementById("new-game-button");
-
-newgameButton.addEventListener("click", ()=>{
-   width.textContent = "";
-   squares.textContent = "";
-   isPlaying = false;
-   createBoard();
-})
 
