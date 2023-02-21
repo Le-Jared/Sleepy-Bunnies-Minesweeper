@@ -1,12 +1,13 @@
 const targetDiv = document.getElementById("welcome-box");
 const hideDiv = document.getElementById("game-box");
 hideDiv.style.display = "none";
-const btn = document.getElementById("start");
+const startBtn = document.getElementById("start");
+startBtn.addEventListener("click", startGame);
 const resetBtn = document.getElementById("reset");
 resetBtn.addEventListener("click", resetGame);
-const grid = document.querySelector('.grid')
-  const flagsLeft = document.querySelector('#flags-left')
-  const result = document.querySelector('#result')
+const grid = document.querySelector('.grid');
+  const flagsLeft = document.querySelector('#flags-left');
+  const result = document.querySelector('#result');
   let width = 10
   let bombAmount = 20
   let flags = 0
@@ -50,8 +51,7 @@ const grid = document.querySelector('.grid')
       const isLeftEdge = (i % width === 0)
       const isRightEdge = (i % width === width -1)
       if (squares[i].classList.contains('valid')) {
-        const bombonLeft = i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')
-        if (bombonLeft) total ++ 
+        if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total ++ //check Left
         if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++ //check up diagonal right
         if (i > 10 && squares[i -width].classList.contains('bomb')) total ++ //check up
         if (i > 11 && !isLeftEdge && squares[i -1 -width].classList.contains('bomb')) total ++ //check up diagonal left
@@ -191,24 +191,26 @@ const grid = document.querySelector('.grid')
 
 
 //Hide instructions
-targetDiv.onclick = function () {
+function startGame () {
       targetDiv.style.display = "none";
       hideDiv.style.display = "block";
     }
 
 
 function resetGame() {
-// reset game variables
-  flags = 0;
-  isGameOver = false;
-  flagsLeft.innerHTML = bombAmount;
-  result.innerHTML = "";
+  // Remove all squares
+    while (grid.firstChild) {
+       grid.removeChild(grid.lastChild);
+    }
     
-// remove all squares from the grid
-  squares.forEach(square => square.remove());
+    // Reset game state
+    flags = 0;
+    isGameOver = false;
     
-// create a new board
-  createBoard();
-}
-
+    // Recreate board
+    createBoard();
+    
+    // Reset result text
+    result.innerHTML = "";
+  }
 
