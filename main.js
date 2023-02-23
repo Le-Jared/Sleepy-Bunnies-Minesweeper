@@ -100,6 +100,7 @@ const grid = document.querySelector('.grid');
         if (total == 2) square.classList.add('two')
         if (total == 3) square.classList.add('three')
         if (total == 4) square.classList.add('four')
+        if (total == 5) square.classList.add('five')
         square.innerHTML = total
         return
       }
