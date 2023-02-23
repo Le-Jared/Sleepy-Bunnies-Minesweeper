@@ -56,12 +56,12 @@ And many more.
 
 Using pseudocode, I broke the process down into several main components.
 
-Step 1: Create the squares of the Grid using a for loop
-Step 2: Create an emptyArray and bombsArray and combine the array before shuffling it to produce random bunnies
-Step 3: Implement a check function to check all surrounding squares and adding numbers 
-Step 4: Implement 'flood' function for each cell using recursion to check neighbouring squares till it hits the condition on the click function
-Step 5: Add a lose and win function
-Step 6: Add a resetGame function
+- Create the squares of the Grid using a for loop
+- Create an emptyArray and bombsArray and combine the array before shuffling it to produce random bunnies
+- Implement a check function to check all surrounding squares and adding numbers 
+- Implement 'flood' function for each cell using recursion to check neighbouring squares till it hits the condition on the click function
+- Add a lose and win function
+- Add a resetGame function
 
 
 Learnt and implemented Recursion for flood function:
