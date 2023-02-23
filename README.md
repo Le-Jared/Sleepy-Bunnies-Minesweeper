@@ -29,9 +29,7 @@ Gameplay Example:
 
 # Technologies used in this project were
 
-HTML & CSS
-FlexBox
-JavaScript
+HTML, CSS and JavaScript
 
 In addition to this, i have used inbuilt methods such as:
 
@@ -50,13 +48,13 @@ In addition to this, i have used inbuilt methods such as:
 - appendChild()
 - push()
 - Array()
-- continue
+- concat()
 
 And many more.
 
 # Code Snipets
 
-Learnt and implemented Recursion:
+Learnt and implemented Recursion for flood function:
 
 <img width="469" alt="Screenshot 2023-02-22 at 11 40 42 AM" src="https://user-images.githubusercontent.com/68887503/220515838-640be2c8-0e15-4cb6-8748-af4dec38cb02.png">
 
