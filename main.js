@@ -175,7 +175,6 @@ const grid = document.querySelector('.grid');
 
   //check for win
   function checkForWin() {
-    ///simplified win argument
   let matches = 0
 
     for (let i = 0; i < squares.length; i++) {
