@@ -113,7 +113,7 @@ let isGameOver = false
   }
 
 
-  //Recusrion where we check neighbouring squares (https://stackoverflow.com/questions/34459086/minesweeper-reveal-nearby-tiles-function)
+  //Recusrion where we check neighbouring squares 
   function checkSquare(square, currentId) {
     const isLeftEdge = (currentId % width === 0)
     const isRightEdge = (currentId % width === width -1)
