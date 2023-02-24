@@ -7,7 +7,7 @@ const grid = document.querySelector('.grid');
 const flagsLeft = document.querySelector('#flags-left');
 const result = document.querySelector('#result');
 
-/*---- Event Listeners & let ----*/
+/*---- Event Listeners & Cached Variables ----*/
 hideDiv.style.display = "none";
 startBtn.addEventListener("click", startGame);
 resetBtn.addEventListener("click", resetGame);
