@@ -1,20 +1,23 @@
+/*---- Constants ----*/
 const targetDiv = document.getElementById("welcome-box");
 const hideDiv = document.getElementById("game-box");
-hideDiv.style.display = "none";
 const startBtn = document.getElementById("start");
-startBtn.addEventListener("click", startGame);
 const resetBtn = document.getElementById("reset");
-resetBtn.addEventListener("click", resetGame);
 const grid = document.querySelector('.grid');
-  const flagsLeft = document.querySelector('#flags-left');
-  const result = document.querySelector('#result');
-  let width = 10
-  let bombAmount = 20
-  let flags = 0
-  let squares = []
-  let isGameOver = false
+const flagsLeft = document.querySelector('#flags-left');
+const result = document.querySelector('#result');
 
+/*---- Event Listeners & let ----*/
+hideDiv.style.display = "none";
+startBtn.addEventListener("click", startGame);
+resetBtn.addEventListener("click", resetGame);
+let width = 10
+let bombAmount = 20
+let flags = 0
+let squares = []
+let isGameOver = false
 
+/*---- Initialize Game ----*/
   //create Board
   function createBoard() {
     flagsLeft.innerHTML = bombAmount
@@ -110,7 +113,7 @@ const grid = document.querySelector('.grid');
   }
 
 
-  //check neighboring squares once square is clicked
+  //Recusrion where we check neighbouring squares (https://stackoverflow.com/questions/34459086/minesweeper-reveal-nearby-tiles-function)
   function checkSquare(square, currentId) {
     const isLeftEdge = (currentId % width === 0)
     const isRightEdge = (currentId % width === width -1)
