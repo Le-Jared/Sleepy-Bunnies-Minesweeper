@@ -66,10 +66,11 @@ Using pseudocode, I broke the process down into several main components.
 
 Learnt and implemented Recursion for flood function:
 
-<img width="469" alt="Screenshot 2023-02-22 at 11 40 42 AM" src="https://user-images.githubusercontent.com/68887503/220515838-640be2c8-0e15-4cb6-8748-af4dec38cb02.png">
+<img width="469" alt="Screenshot 2023-02-24 at 9 21 31 AM" src="https://user-images.githubusercontent.com/68887503/221068876-be108a4e-100c-462f-a571-48a924ae3943.png">
 
 
 # Future Work
 - Add a timer
 - Add scoreboard
 - Add audio
+- Add different difficulties
