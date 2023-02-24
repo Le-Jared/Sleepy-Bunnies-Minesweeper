@@ -1,10 +1,10 @@
-# Bunny Feeder
+# Sleepy Bunnies (Minesweeper Variation)
 The origin of Minesweeper is unclear. According to TechRadar, the first version of the game was 1990's Microsoft Minesweeper, but Eurogamer says Mined-Out by Ian Andrew (1983) was the first Minesweeper game. Curt Johnson, the creator of Microsoft Minesweeper, acknowledges that his game's design was borrowed from another game, but it was not Mined-Out, and he does not remember which game it is.
 
 This is my take on the Minesweeper game, i call it Sleepy Bunnies. The gameplay remains the same, except that we are meant to avoid disturbing the Rabbits while you clear the land. Place Carrots instead of Flags!
 
-Link to Game:
-https://le-jared.github.io/Minesweeper/
+[Click here](https://le-jared.github.io/Minesweeper/) to see it in action
+
 
 # User Stories & Wireframes
 | As a User, I ...                         |                 and this happens!    
@@ -29,9 +29,7 @@ Gameplay Example:
 
 # Technologies used in this project were
 
-HTML & CSS
-FlexBox
-JavaScript
+HTML, CSS and JavaScript
 
 In addition to this, i have used inbuilt methods such as:
 
@@ -50,18 +48,29 @@ In addition to this, i have used inbuilt methods such as:
 - appendChild()
 - push()
 - Array()
-- continue
+- concat()
 
 And many more.
 
-# Code Snipets
+# Pseudocode & Code Snipets 
 
-Learnt and implemented Recursion:
+Using pseudocode, I broke the process down into several main components.
 
-<img width="469" alt="Screenshot 2023-02-22 at 11 40 42 AM" src="https://user-images.githubusercontent.com/68887503/220515838-640be2c8-0e15-4cb6-8748-af4dec38cb02.png">
+- Create the squares of the Grid using a for loop
+- Create an emptyArray and bombsArray and combine the array before shuffling it to produce random bunnies
+- Implement a check function to check all surrounding squares and adding numbers 
+- Implement 'flood' function for each cell using recursion to check neighbouring squares till it hits the condition on the click function
+- Add a lose and win function
+- Add a resetGame function
+
+
+Learnt and implemented Recursion for flood function:
+
+<img width="469" alt="Screenshot 2023-02-24 at 9 21 31 AM" src="https://user-images.githubusercontent.com/68887503/221068876-be108a4e-100c-462f-a571-48a924ae3943.png">
 
 
 # Future Work
 - Add a timer
 - Add scoreboard
 - Add audio
+- Add different difficulties
