@@ -3,8 +3,8 @@ The origin of Minesweeper is unclear. According to TechRadar, the first version 
 
 This is my take on the Minesweeper game, i call it Sleepy Bunnies. The gameplay remains the same, except that we are meant to avoid disturbing the Rabbits while you clear the land. Place Carrots instead of Flags!
 
-Link to Game:
-https://le-jared.github.io/Minesweeper/
+[Click here](https://le-jared.github.io/Minesweeper/) to see it in action
+
 
 # User Stories & Wireframes
 | As a User, I ...                         |                 and this happens!    
