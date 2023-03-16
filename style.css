@@ -25,14 +25,28 @@ h2{
 }
 
 .grid {
-  min-height: 400px;
-  width: 400px;
+  min-height: 200px;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-wrap: wrap;
   background-color: #008013;
-  border: 20px solid #5C4033;
+  border: 10px solid #5C4033;
+  margin: 0 auto;
   margin-bottom: 20px;
+  overflow: auto;
 }
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    min-height: 300px;
+    max-width: 80%;
+    margin: 0 auto;
+    border: 10px solid #5C4033;
+  }
+}
+
+
 
 div {
   font-size: 20px;
@@ -100,3 +114,39 @@ button {
     border-radius: 20px 20px 20px 20px;
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    min-width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    min-height: auto;
+    max-width: 350px;
+    border: 10px solid #5C4033;
+  }
+
+  div {
+    font-size: 16px;
+  }
+
+  .valid,
+  .checked,
+  .bomb {
+    min-height: 30px;
+    min-width: 30px;
+    border: 3px solid;
+    margin: 2px;
+  }
+
+  #main-header {
+    font-size: 30px;
+  }
+
+  button {
+    width: 80px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
