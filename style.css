@@ -29,9 +29,9 @@ h2{
 }
 
 .grid {
-  min-height: 200px;
+  min-height: 600px; /* Adjusted from 400px */
   width: 100%;
-  max-width: 400px;
+  max-width: 600px; /* Adjusted from 400px */
   display: flex;
   flex-wrap: wrap;
   background-color: #008013;
@@ -41,17 +41,6 @@ h2{
   overflow: auto;
 }
 
-@media only screen and (max-width: 600px) {
-  .grid {
-    min-height: 300px;
-    max-width: 80%;
-    margin: 0 auto;
-    border: 10px solid #5C4033;
-  }
-}
-
-
-
 div {
   font-size: 20px;
   text-align: center;
@@ -59,33 +48,56 @@ div {
   font-family: Arial, Helvetica, sans-serif;
 
 }
-.valid {
-  min-height: 40px;
-  width: 40px;
+
+.valid,
+.checked,
+.bomb,
+.cover {
+  min-height: 60px; /* Adjusted from 40px */
+  min-width: 60px; /* Adjusted from 40px */
   border: 5px solid;
   border-color: #009A17;
   box-sizing: border-box;
+  position: relative;
 }
 
-.checked {
-  min-height: 40px;
-  min-width: 40px;
-  border: 5px solid;
+.cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #008013;
+  z-index: -1; 
+}
+
+.uncovered {
   background-color: #b5651e;
-  border-color: #009A17;
-  box-sizing: border-box;
 }
 
-.bomb {
-  min-height: 40px;
-  min-width: 40px;
-  border: 5px solid;
-  border-color: #009A17;
-  box-sizing: border-box;
+
+.bunny,
+.carrot {
+  font-size: 24px;
+  z-index: 2;
+  position: relative;
 }
+
+.one,
+.two,
+.three,
+.four,
+.five {
+  font-size: 24px;
+  z-index: 2;
+  position: relative;
+}
+
+
 
 .one {
-  color: #e76346;
+  color: darkmagenta;
 }
 
 .two {
@@ -97,7 +109,7 @@ div {
 }
 
 .four{
-  color: #bb41d3;
+  color: red;
 }
 
 .five{
@@ -118,57 +130,3 @@ button {
     border-radius: 20px 20px 20px 20px;
 }
 
-@media only screen and (max-width: 600px) {
-  .container {
-    min-width: auto;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .grid {
-    min-height: auto;
-    max-width: 350px;
-    border: 10px solid #5C4033;
-  }
-
-  div {
-    font-size: 16px;
-  }
-
-  .valid,
-  .checked,
-  .bomb {
-    min-height: 30px;
-    min-width: 30px;
-    border: 3px solid;
-    margin: 2px;
-  }
-
-  #main-header {
-    font-size: 30px;
-  }
-
-  button {
-    width: 80px;
-    height: 25px;
-    font-size: 14px;
-  }
-}
-
-/* Styles for larger screens */
-.board {
-  width: 500px;
-  height: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Styles for smaller screens */
-@media (max-width: 767px) {
-  .board {
-    width: 90%;
-    height: 90%;
-  }
-}

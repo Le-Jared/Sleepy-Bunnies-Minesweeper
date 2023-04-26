@@ -33,6 +33,7 @@ let isGameOver = false
       const square = document.createElement('div')
       square.setAttribute('id', i)
       square.classList.add(shuffledArray[i])
+      square.classList.add('cover')
       grid.appendChild(square)
       squares.push(square)
 
@@ -69,30 +70,34 @@ let isGameOver = false
   }
   createBoard()
 
-  //add Carrot function
   function addFlag(square) {
     if (isGameOver) return
     if (!square.classList.contains('checked') && (flags < bombAmount)) {
       if (!square.classList.contains('flag')) {
         square.classList.add('flag')
+        square.style.zIndex = '10' // Add this line to change the z-index of the carrot
         square.innerHTML = '🥕'
         flags ++
-        flagsLeft.innerHTML = bombAmount- flags
+        flagsLeft.innerHTML = bombAmount - flags
         checkForWin()
       } else {
         square.classList.remove('flag')
+        square.style.zIndex = '1' // Reset the z-index when the flag is removed
         square.innerHTML = ''
         flags --
-        flagsLeft.innerHTML = bombAmount- flags
+        flagsLeft.innerHTML = bombAmount - flags
       }
     }
   }
+  
 
   //click on square actions
   function click(square) {
     let currentId = square.id
     if (isGameOver) return
     if (square.classList.contains('checked') || square.classList.contains('flag')) return
+    square.classList.add("uncovered");
+    square.classList.remove('cover');
     if (square.classList.contains('bomb')) {
       gameOver(square)
     } else {
@@ -171,6 +176,7 @@ let isGameOver = false
     squares.forEach(square => {
       if (square.classList.contains('bomb')) {
         square.innerHTML = '🐰'
+        square.classList.add("uncovered");
         square.classList.remove('bomb')
         square.classList.add('checked')
       }
